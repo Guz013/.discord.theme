@@ -30,4 +30,12 @@ $subtext1: #cacaca;
       background-color: $mantle !important;
     }
   }
+
+  /* -- Hide textarea buttons -- */
+  /* Gifts button */
+  * button[aria-label="Open GIF picker"],
+  /* Stickers button */
+  * button[aria-label="Open sticker picker"] {
+    display: none !important;
+  }
 }
