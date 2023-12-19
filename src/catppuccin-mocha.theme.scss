@@ -39,3 +39,12 @@ $subtext1: #cacaca;
     display: none !important;
   }
 }
+/* -- Hide nitro stuff -- */
+/* Textarea gift button */
+* button[aria-label="Send a gift"],
+  /* Nitro tab on left sidebar */
+  * [data-list-item-id="private-channels-uid_164___nitro"],
+  /* Shop tab on left sidebar */
+  * [data-list-item-id="private-channels-uid_164___shop"] {
+  display: none !important;
+}
