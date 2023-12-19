@@ -31,20 +31,41 @@ $subtext1: #cacaca;
     }
   }
 
-  /* -- Hide textarea buttons -- */
-  /* Gifts button */
+  /* -- Hide text area buttons ------------------- */
+  /* GIF picker */
   * button[aria-label="Open GIF picker"],
-  /* Stickers button */
+  /* Sticker picker */
   * button[aria-label="Open sticker picker"] {
     display: none !important;
   }
-}
-/* -- Hide nitro stuff -- */
-/* Textarea gift button */
-* button[aria-label="Send a gift"],
-  /* Nitro tab on left sidebar */
-  * [data-list-item-id="private-channels-uid_164___nitro"],
-  /* Shop tab on left sidebar */
-  * [data-list-item-id="private-channels-uid_164___shop"] {
-  display: none !important;
+  /* -- --------------------- ------------------- */
+
+  /* -- Hide nitro stuff ------------------------ */
+  /* Text area gift button */
+  * button[aria-label="Send a gift"] {
+    display: none !important;
+  }
+  * ul[aria-label="Direct Messages"] {
+    & li {
+      /* Nitro tab on left sidebar */
+      * a[data-list-item-id*="nitro"],
+      /* Shop tab on left sidebar */
+      * a[data-list-item-id*="shop"] {
+        display: none !important;
+      }
+    }
+  }
+  /* Billing settings */
+  * div[aria-label="User Settings"] {
+    & div:has(+ div[class^="premiumTab"]),
+    & div[class^="premiumTab"],
+    & div[class^="premiumTab"] + div,
+    & div[aria-label="Subscriptions"],
+    & div[aria-label="Gift Inventory"],
+    & div[aria-label="Gift Inventory"] + div,
+    & div[aria-label="Gift Inventory"] + div + div {
+      display: none !important;
+    }
+  }
+  /* -- ---------------- ------------------------ */
 }
