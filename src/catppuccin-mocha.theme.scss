@@ -31,7 +31,7 @@ $subtext1: #cacaca;
     }
   }
 
-  /* -- Hide text area buttons ------------------- */
+  /* -- Hide text area buttons ------------------ */
   /* GIF picker */
   * button[aria-label="Open GIF picker"],
   /* Sticker picker */
@@ -39,6 +39,73 @@ $subtext1: #cacaca;
     display: none !important;
   }
   /* -- --------------------- ------------------- */
+
+  /* -- Discrete buttons ------------------------ */
+  @mixin hover-color(
+    $propertie: "color",
+    $color: #{$mantle},
+    $color-2: var(--text-normal)
+  ) {
+    transition: all 0.2s ease;
+    #{$propertie}: $color !important;
+    &:hover {
+      #{$propertie}: $color-2 !important;
+    }
+  }
+
+  * button[aria-label="Select emoji"] div[class*="spriteContainer"] div {
+    transition: all 0.2s ease;
+    background-color: $base !important;
+  }
+  * button[aria-label="Select emoji"]:hover div[class*="spriteContainer"] div {
+    transition: all 0.2s ease;
+    background-color: transparent !important;
+  }
+
+  * button[aria-label="Upload a file or send invites"] svg path {
+    transition: all 0.2s ease;
+    fill: $base !important;
+  }
+  * button[aria-label="Upload a file or send invites"]:hover svg path {
+    transition: all 0.2s ease;
+    fill: var(--interactive-normal) !important;
+  }
+
+  * section[aria-label="Channel header"] {
+    div[role="button"] svg {
+      @include hover-color();
+    }
+    & div[class*="search"] {
+      & * div[id*="placeholder"] {
+        @include hover-color();
+      }
+    }
+  }
+
+  [aria-label="User area"] {
+    button[role="switch"][aria-checked="false"] svg path,
+    button[aria-label="User Settings"] svg path {
+      transition: all 0.2s ease;
+      fill: $mantle !important;
+    }
+    button[role="switch"][aria-checked="false"]:hover svg path,
+    button[aria-label="User Settings"]:hover svg path {
+      transition: all 0.2s ease;
+      fill: var(--text-normal) !important;
+    }
+
+    button[role="switch"][aria-checked="true"] svg path {
+      transition: all 0.2s ease;
+      fill: var(--status-danger) !important;
+      filter: brightness(50%);
+    }
+    button[role="switch"][aria-checked="true"]:hover svg path {
+      transition: all 0.2s ease;
+      fill: var(--status-danger) !important;
+      filter: brightness(100%);
+    }
+  }
+  /* -- ---------------- ------------------------ */
 
   /* -- Hide nitro stuff ------------------------ */
   /* Text area gift button */
