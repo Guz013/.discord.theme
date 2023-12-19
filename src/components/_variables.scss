@@ -260,8 +260,8 @@ html {
 
   --textbox-markdown-syntax: #{$overlay0};
 
-  --spoiler-revealed-background: #{$surface0};
-  --spoiler-hidden-background: #{$surface2};
+  --spoiler-revealed-background: #{$mantle};
+  --spoiler-hidden-background: #{$mantle};
 
   --android-navigation-bar-background: #{$crust};
   --android-ripple: #{adjust-color($crust, $alpha: -0.7)};

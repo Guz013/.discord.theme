@@ -11,7 +11,14 @@
 @use "sass:math";
 @use "@catppuccin/palette/scss/mocha" as *;
 
-$brand: $blue;
+$brand: $text;
+
+$base: #111111;
+$crust: #111111;
+$mantle: #181818;
+$text: #cacaca;
+$subtext0: #cacaca;
+$subtext1: #cacaca;
 
 @import "theme";
 .theme-dark {
