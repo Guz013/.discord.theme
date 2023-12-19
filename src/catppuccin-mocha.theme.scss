@@ -11,6 +11,8 @@
 @use "sass:math";
 @use "@catppuccin/palette/scss/mocha" as *;
 
+/* -- Recolor --------------------------------- */
+
 $brand: $text;
 
 $base: #111111;
@@ -20,16 +22,27 @@ $text: #cacaca;
 $subtext0: #cacaca;
 $subtext1: #cacaca;
 
+/* -- ------- --------------------------------- */
+
 @import "theme";
+@import "user";
+
 .theme-dark {
   @import "@catppuccin/highlightjs/sass/catppuccin-mocha";
 
+  /* Spoiler recolor */
   & span[class^="spoilerContent"] {
     background-color: $mantle !important;
     &[class*="hidden"] {
       background-color: $mantle !important;
     }
   }
+
+  /* -- Heart ----------------------------------- */
+  * a[href="/channels/@me/#{$heart-id}"] {
+    color: #ff5555;
+  }
+  /* -- ----- ----------------------------------- */
 
   /* -- Hide text area buttons ------------------ */
   /* GIF picker */

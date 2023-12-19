@@ -9,6 +9,9 @@ dist/
 *.sass.map
 *.scss.map
 
+# Private
+**/*/_user.scss
+
 ## Node
 # Logs
 logs
