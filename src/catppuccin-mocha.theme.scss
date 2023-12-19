@@ -23,4 +23,11 @@ $subtext1: #cacaca;
 @import "theme";
 .theme-dark {
   @import "@catppuccin/highlightjs/sass/catppuccin-mocha";
+
+  & span[class^="spoilerContent"] {
+    background-color: $mantle !important;
+    &[class*="hidden"] {
+      background-color: $mantle !important;
+    }
+  }
 }
